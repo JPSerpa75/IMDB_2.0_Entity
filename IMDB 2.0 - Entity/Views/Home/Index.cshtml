@@ -1,0 +1,23 @@
+﻿
+<div class="jumbotron text-center my-5">
+    <h1>Bem-vindo ao IMDB 2.0</h1>
+    <p class="lead">Aqui você pode cadastrar seus filmes e atores preferidos</p>
+</div>
+
+<div class="row text-center">
+    <div class="col-4">
+        <p>
+            @Html.ActionLink("Atores", "Index", "Ator", null, new { @class = "btn btn-lg btn-primary" })
+        </p>
+    </div>
+    <div class="col-4">
+        <p>
+            @Html.ActionLink("Atuações", "Index", "Atuacao", null, new { @class = "btn btn-lg btn-primary" })
+        </p>
+    </div>
+    <div class="col-4">
+        <p>
+            @Html.ActionLink("Filmes", "Index", "Filme", null, new { @class = "btn btn-lg btn-primary" })
+        </p>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+﻿@model IEnumerable<IMDB_2._0___Entity.Models.Filme>
+
+<div class="jumbotron mt-5 text-center">
+    <h1>Lista de filmes</h1>
+    <p class="lead">Aqui você pode gerenciar seus filmes</p>
+</div>
+
+
+<p class="text-center mb-4">
+    @Html.ActionLink("Cadastrar novo filme", "Create", null, new { @class = "btn btn-dark" })
+</p>
+<table class="table table-striped table-hover text-center">
+    <tr>
+        <th>
+            Título
+        </th>
+        <th>
+            Categoria
+        </th>
+        <th>
+            Idioma
+        </th>
+        <th>
+            Ano de lançamento
+        </th>
+        <th>Ações</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.titulo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.categoria)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.idioma)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.anoLancamento)
+            </td>
+            <td>
+                <a href="@Url.Action("Edit", "Filme", new { id = item.filmeId })" class="mx-2"><i class='bi bi-pencil'></i></a> 
+                <a href="@Url.Action("Details", "Filme", new { id = item.filmeId })" class="mx-2"><i class='bi bi-eye'></i></a> 
+                <a href="@Url.Action("Delete", "Filme", new { id = item.filmeId })" class="mx-2"><i class='bi bi-trash'></i></a> 
+            </td>
+        </tr>
+    }
+
+</table>
