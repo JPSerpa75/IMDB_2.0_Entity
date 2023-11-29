@@ -98,8 +98,8 @@ namespace IMDB_2._0___Entity.Controllers
 		[ValidateAntiForgeryToken]
 		public ActionResult Delete(long id)
 		{
-			Filme fabricante = context.Filmes.Find(id);
-			context.Filmes.Remove(fabricante);
+			Filme filme = context.Filmes.Find(id);
+			context.Filmes.Remove(filme);
 			context.SaveChanges();
 			return RedirectToAction("Index");
 		}

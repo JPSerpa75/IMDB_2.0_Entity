@@ -9,8 +9,12 @@ namespace IMDB_2._0___Entity.Context
 {
     public class EFContext : DbContext
     {
-        public EFContext() : base("IMDB2_Entity") { }
+        public EFContext() : base("IMDB2_Entity")
+        {
+            Database.SetInitializer<EFContext>(new DropCreateDatabaseIfModelChanges<EFContext>());
+        }
         public DbSet<Filme> Filmes { get; set; }
+        public DbSet<Ator> atores { get; set; }
 
     }
 }

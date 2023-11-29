@@ -1,9 +1,5 @@
 ﻿@model IMDB_2._0___Entity.Models.Filme
 
-@{
-    ViewBag.Title = "Delete";
-}
-
 <div class="jumbotron mt-5 text-center">
     <h1>Deletar filme</h1>
     <p class="lead">Você tem certeza que deseja deletar esse filme?</p>
@@ -17,7 +13,7 @@
         <div class="form-group mb-2">
             <label for="titulo" class="form-label">Título</label>
             <div class="col-12">
-                @Html.EditorFor(model => model.titulo, new { htmlAttributes = new { @class = "form-control disabled", disabled = "disabled" } })
+                @Html.EditorFor(model => model.titulo, new { htmlAttributes = new { @class = "form-control", disabled = "disabled" } })
                 @Html.ValidationMessageFor(model => model.titulo, "", new { @class = "text-danger" })
             </div>
         </div>
