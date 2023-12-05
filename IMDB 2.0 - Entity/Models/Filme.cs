@@ -14,6 +14,7 @@ namespace IMDB_2._0___Entity.Models
         public String idioma { get; set; }
         public String classificacaoIndicativa { get; set; }
         public int? anoLancamento { get; set; }
+        public virtual ICollection<Atuacao> atuacoes { get; set; }
 
     }
 }

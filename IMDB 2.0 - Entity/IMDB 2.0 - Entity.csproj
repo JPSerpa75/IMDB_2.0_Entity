@@ -128,12 +128,14 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Context\EFContext.cs" />
     <Compile Include="Controllers\AtorController.cs" />
+    <Compile Include="Controllers\AtuacoesController.cs" />
     <Compile Include="Controllers\FilmeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Ator.cs" />
+    <Compile Include="Models\Atuacao.cs" />
     <Compile Include="Models\Filme.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -216,6 +218,9 @@
     <Content Include="Views\Ator\Create.cshtml" />
     <Content Include="Views\Ator\Edit.cshtml" />
     <Content Include="Views\Ator\Delete.cshtml" />
+    <Content Include="Views\Atuacoes\Index.cshtml" />
+    <Content Include="Views\Atuacoes\Create.cshtml" />
+    <Content Include="Views\Atuacoes\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

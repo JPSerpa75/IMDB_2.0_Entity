@@ -15,6 +15,7 @@ namespace IMDB_2._0___Entity.Context
         }
         public DbSet<Filme> Filmes { get; set; }
         public DbSet<Ator> atores { get; set; }
+        public DbSet<Atuacao> atuacoes { get; set; }
 
     }
 }

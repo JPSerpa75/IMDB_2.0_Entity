@@ -1,0 +1,42 @@
+﻿@model IEnumerable<IMDB_2._0___Entity.Models.Atuacao>
+
+<div class="jumbotron mt-5 text-center">
+    <h1>Lista de Atuações</h1>
+    <p class="lead">Aqui você pode gerenciar suas atuações</p>
+</div>
+
+<p class="text-center mb-4">
+    @Html.ActionLink("Cadastrar nova atuação", "Create", null, new { @class = "btn btn-dark" })
+</p>
+
+<table class="table table-striped table-hover text-center">
+    <tr>
+        <th>
+            Ator
+        </th>
+        <th>
+            Filme
+        </th>
+        <th>
+            Ações
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ator.nome)
+                @Html.DisplayFor(modelItem => item.ator.sobrenome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.filme.titulo)
+                    </td>
+            <td>
+                <a href="@Url.Action("Delete", "Atuacoes", new { id = item.atuacaoId })" class="mx-2"><i class='bi bi-trash'></i></a>
+            </td>
+        </tr>
+    }
+
+</table>
+
