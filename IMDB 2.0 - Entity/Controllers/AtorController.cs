@@ -84,10 +84,16 @@ namespace IMDB_2._0___Entity.Controllers
         public ActionResult Delete(long id)
         {
             Ator ator = context.atores.Find(id);
+            if (ator.atuacoes.Count > 0)
+            {
+                ModelState.AddModelError(string.Empty, "O seguinte ator não pode ser excluído pois possui atuações associadas ele.");
+                return View(ator);
+            }
             context.atores.Remove(ator);
             context.SaveChanges();
             return RedirectToAction("Index");
         }
+
 
     }
 }

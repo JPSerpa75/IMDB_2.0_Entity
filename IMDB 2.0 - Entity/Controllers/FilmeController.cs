@@ -99,6 +99,11 @@ namespace IMDB_2._0___Entity.Controllers
 		public ActionResult Delete(long id)
 		{
 			Filme filme = context.Filmes.Find(id);
+			if (filme.atuacoes.Count > 0)
+			{
+				ModelState.AddModelError(string.Empty, "O seguinte filme não pode ser excluído pois possui atuações associadas ele.");
+				return View(filme);
+			}
 			context.Filmes.Remove(filme);
 			context.SaveChanges();
 			return RedirectToAction("Index");
